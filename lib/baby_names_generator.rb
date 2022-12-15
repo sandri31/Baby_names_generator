@@ -65,7 +65,9 @@ puts names.count.to_s + ' names generated'
 
 names = names.sort.group_by { |i| i[0] }
 
+newbabynames =[]
+
 names.each do |key, value|
-  puts "#{key} : #{value.count} names"
-  puts value.join(', ')
+  newbabynames << "#{key} : #{value.count} noms.  \n #{value.join(', ')} "
 end
+puts newbabynames
