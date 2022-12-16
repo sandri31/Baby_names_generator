@@ -1,4 +1,11 @@
 <div class="container">
+  <h1>Buttons</h1>
+  <div class="btn-group">
+    <% ('A'..'Z').each do |letter| %>
+      <a class="btn btn-secondary"><%= letter %></a>
+    <% end %>
+  </div>
+
   <h1>Tableau</h1>
   <div class="table-responsive">
     <table class="table table-dark table-hover">
