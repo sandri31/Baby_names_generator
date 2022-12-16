@@ -1,8 +1,9 @@
 <div class="container">
   <h1>Buttons</h1>
   <div class="btn-group">
-    <% ('A'..'Z').each do |letter| %>
-      <a class="btn btn-secondary"><%= letter %></a>
+    <% ('A'..'T').each do |letter| %>
+      <% next if letter == 'Q' %>
+      <%= link_to letter, letter_path(letter) %>
     <% end %>
   </div>
 
