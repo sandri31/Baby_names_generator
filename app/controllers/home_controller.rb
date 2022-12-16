@@ -71,7 +71,7 @@ class HomeController < ApplicationController
     letternumber = []
     newbabynames = []
     names.each do |key, value|
-      lettrenumber << "#{key} : #{value.count} noms."
+      letternumber << "#{key} : #{value.count} noms."
       newbabynames << "#{value.join(', ')} "
     end
     @varglobal = newbabynames
