@@ -1,4 +1,34 @@
-<h1>Home#new</h1>
-<p>Find me in app/views/home/new.html.erb</p>
+<div class="container">
+  <h1>Buttons</h1>
+  <div class="btn-group">
+    <% ('A'..'Z').each do |letter| %>
+      <a class="btn btn-secondary"><%= letter %></a>
+    <% end %>
+  </div>
 
-<%= @script_baby_names %>
+  <h1>Tableau</h1>
+  <div class="table-responsive">
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th scope="col">titleletter</th>
+          <th scope="col">varglobal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @titleletter.each do |titleletter| %>
+          <tr>
+            <td><%= titleletter %></td>
+            <td>
+              <% @varglobal.each_with_index do |varglobal, index| %>
+                <% if index == @titleletter.index(titleletter) %>
+                  <strong><%= varglobal %></strong>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
