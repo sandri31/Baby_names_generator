@@ -1,4 +1,27 @@
-<p>
-<%= @titleletter[0] %>
-</p>
-<%= @varglobal[0] %>
+<div class="container">
+  <h1>Tableau</h1>
+  <div class="table-responsive">
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th scope="col">titleletter</th>
+          <th scope="col">varglobal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @titleletter.each do |titleletter| %>
+          <tr>
+            <td><%= titleletter %></td>
+            <td>
+              <% @varglobal.each_with_index do |varglobal, index| %>
+                <% if index == @titleletter.index(titleletter) %>
+                  <strong><%= varglobal %></strong>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
