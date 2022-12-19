@@ -77,4 +77,6 @@ class HomeController < ApplicationController
     @varglobal = newbabynames
     @titleletter = letternumber
   end
+
+  def description; end
 end
