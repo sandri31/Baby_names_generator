@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   get 'letters/:letter', to: 'letters#show', as: 'letter'
 
   # Defines the root path route ("/")
-  root "home#new"
+  root "home#description"
 end

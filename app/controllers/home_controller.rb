@@ -7,4 +7,6 @@ class HomeController < ApplicationController
   def new
     @baby_names, @name_count = BabyNameGenerator.generate_baby_names
   end
+
+  def description; end
 end
