@@ -77,6 +77,7 @@ body {
   @media print {
     display: none !important;
   }
+
 }
 /* Header */
 #head { background:#181015 url( ../images/bg_header.jpg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
@@ -148,3 +149,5 @@ img.pull-left { margin-right: 10px; }
 
 	.widget-simplenav { margin-left:-5px; }		
 	.widget-simplenav a{ margin:0 5px; }		
+=======
+}

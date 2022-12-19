@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/new'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'letters/:letter', to: 'letters#show', as: 'letter'
 
   # Defines the root path route ("/")
   root "home#description"
