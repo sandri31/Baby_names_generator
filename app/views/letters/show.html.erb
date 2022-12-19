@@ -1,3 +1,27 @@
 <h1>La lettre sélectionée est : <%= @letter %></h1>
 
-<a class="btn btn-primary" href="/" type="button">Back to all letters</a>
+<div class="container">
+    <h1>Buttons</h1>
+  <div class="btn-group">
+    <% ('A'..'T').each do |letter| %>
+      <% next if letter == 'Q' %>
+      <%= link_to letter, letter_path(letter) %>
+    <% end %>
+  </div>
+
+  <h1>Tableau</h1>
+  <div class="table-responsive">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">name_count</th>
+        <th scope="col">baby_names</th>
+      </tr>
+    </thead>
+    <div id="letter-results">
+      <%= render "partials/letter_results" %>
+    </div>
+  </table>
+</div>
+
+<a class="btn btn-primary" href="/" type="button">Retour à toutes les lettres</a>
