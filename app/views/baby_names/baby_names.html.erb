@@ -1,6 +1,23 @@
 <div class="container mt-5">
   <% if @names.count == 0 %>
-    <h1>Aucun nom trouvé</h1>
+    <div class="alert alert-secondary text-center mt-5" style="padding-top: 90px;" role="alert">
+      <h1>Il n'y a pas de noms dans la liste</h1>
+      <p>
+        <a href="<%= root_path %>" class="btn btn-secondary">Retour à l'accueil</a>
+      </p>
+  <img src="https://images.ctfassets.net/s5n2t79q9icq/6rdW8PbWVohxvAum5Q20sN/e41ed9f2bda29bc8e39cfecec1e5761a/icon_768x432_capenna_express.jpg?fm=webp" alt="carte magic the gathering" class="img-fluid">
+  <h2>Aucun nom trouvé</h2>
+  <p>
+    Celui-ci est arrivé à destination, il est temps de trouver un moyen de le faire partir.
+  </p>
+  <p>
+    <strong>Veuillez réessayer avec un autre nom.</strong>
+  </p>
+  <p>
+    <a href="<%= root_path %>" class="btn btn-secondary">Retour à l'accueil</a>
+  </p>
+</div>
+
   <% else %>
     <h1 style="margin-top: 140px;">Ici la liste des noms</h1>
     <div class="accordion" id="accordionExample">
