@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# BabyNameSuggestion is a module that provides methods for generating and
+# BabyNameGenerator is a module that provides methods for generating and
 # filtering baby names. It contains a list of common vowels and consonants,
 # and a set of rules for determining which names are allowed and which are
 # forbidden.
