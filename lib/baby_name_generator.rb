@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# This module provides a way to generate baby names and count the number of baby names per first letter.
-#
-# It has several constants that contain arrays of vowels, consonants, and forbidden and required characters.
-# It also has constants for the minimum and maximum length of the generated names.
+# BabyNameSuggestion is a module that provides methods for generating and
+# filtering baby names. It contains a list of common vowels and consonants,
+# and a set of rules for determining which names are allowed and which are
+# forbidden.
 #
 # @author JMG Harry and modified by Symitsh
 module BabyNameGenerator
@@ -21,8 +21,20 @@ module BabyNameGenerator
     list1.product(list2).map(&:join)
   end
 
-  def self.authorized?(name)
-    valid_length?(name) && contains_required_chars?(name) && !forbidden_char_present?(name)
+  def self.ends_with?(string, substring)
+    string[-substring.length, substring.length] == substring
+  end
+
+  def self.starts_with?(string, substring)
+    string[0, substring.length] == substring
+  end
+
+  def self.authorized?(name, starts_with: nil, ends_with: nil)
+    valid_length?(name) &&
+      contains_required_chars?(name) &&
+      !forbidden_char_present?(name) &&
+      (starts_with.nil? || starts_with?(name, starts_with)) &&
+      (ends_with.nil? || ends_with?(name, ends_with))
   end
 
   def self.valid_length?(name)
@@ -35,11 +47,11 @@ module BabyNameGenerator
 
   def self.forbidden_char_present?(name)
     FORBIDDEN_GLOBAL.any? { |char| name.include?(char) } ||
-      FORBIDDEN_START.any? { |char| name.start_with?(char) } ||
-      FORBIDDEN_END.any? { |char| name.end_with?(char) }
+      FORBIDDEN_START.any? { |char| starts_with?(name, char) } ||
+      FORBIDDEN_END.any? { |char| ends_with?(name, char) }
   end
 
-  def self.generate_baby_names
+  def self.generate_baby_generator(starts_with: nil, ends_with: nil)
     blocks = []
     blocks[0] = generate_combinations(VOWELS, CONSONANTS)
     blocks[1] = generate_combinations(CONSONANTS, VOWELS)
@@ -49,17 +61,8 @@ module BabyNameGenerator
     names.concat(generate_combinations(blocks[0], blocks[1]))
     names.concat(generate_combinations(blocks[1], blocks[0]))
     names.concat(generate_combinations(blocks[1], blocks[1]))
-    names = names.sort.select { |name| authorized?(name) }
+    names = names.sort.select { |name| authorized?(name, starts_with: starts_with, ends_with: ends_with) }
     names = names.map(&:capitalize)
-    names = names.sort.group_by { |name| name[0] }
-
-    name_count = []
-    baby_names = []
-    names.each do |first_char, names_with_same_first_char|
-      name_count << "#{first_char} : #{names_with_same_first_char.count} names"
-      baby_names << "#{names_with_same_first_char.join(', ')} "
-    end
-
-    [baby_names, name_count]
+    baby_names = names.sort.group_by { |name| name[0] }
   end
 end
