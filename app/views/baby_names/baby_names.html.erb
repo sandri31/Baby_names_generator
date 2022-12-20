@@ -1,6 +1,12 @@
 <h1>Ici la liste des noms</h1>
 <ul class="list-group mb-3">
   <% @names.each do |name| %>
-    <li class="list-group-item"><%= name %></li>
+    <li class="list-group-item"><%= name[0] %> : <%= name[1].count %></li>
+    <!-- Afficher les noms de la liste sans qu'ils soient dans un tableau -->
+    <li class="list-group-item">
+      <% name[1].each do |name| %>
+        <%= name %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
