@@ -1,12 +1,24 @@
-<h1>Ici la liste des noms</h1>
-<ul class="list-group mb-3">
-  <% @names.each do |name| %>
-    <li class="list-group-item"><%= name[0] %> : <%= name[1].count %></li>
-    <!-- Afficher les noms de la liste sans qu'ils soient dans un tableau -->
-    <li class="list-group-item">
-      <% name[1].each do |name| %>
-        <%= name %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Ici la liste des noms</h1>
+  <div class="accordion" id="accordionExample">
+    <% @names.each do |name| %>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading-<%= name[0] %>">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= name[0] %>" aria-expanded="false" aria-controls="collapse-<%= name[0] %>">
+            <%= name[0] %> : <%= name[1].count %>
+          </button>
+        </h2>
+        <div id="collapse-<%= name[0] %>" class="accordion-collapse collapse show" aria-labelledby="heading-<%= name[0] %>" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul class="list-group mb-3">
+              <% name[1].each do |name| %>
+                <%= name %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
