@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container">
   <% if @names.count == 0 %>
     <div class="alert alert-secondary text-center mt-5" style="padding-top: 90px;" role="alert">
       <h1>Il n'y a pas de noms dans la liste</h1>
@@ -18,7 +18,14 @@
       </p>
     </div>
   <% else %>
-    <h1 style="margin-top: 140px;">Ici la liste des noms</h1>
+    <!-- About Section Heading-->
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mt-5" style="padding-top: 120px;">Liste des noms</h2>
+			<!-- Icon Divider-->
+			<div class="divider-custom" style="margin-bottom: 80px;">
+				<div class="divider-custom-line"></div>
+				<div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+				<div class="divider-custom-line"></div>
+			</div>
     <div class="accordion" id="accordionExample">
       <% @names.each do |name| %>
         <div class="accordion-item">
