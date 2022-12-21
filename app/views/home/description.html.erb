@@ -13,12 +13,11 @@
 					<div class="divider-custom-line"></div>
 			</div>
 			<%= form_with(url: baby_names_path, method: :get, local: true, class: "form-inline") do %>
-				<!-- Mettre côte à côte les champs de saisie -->
 				<%= label_tag :starts_with, "Lettre de début :", class: "sr-only" %>
-				<%= text_field_tag :starts_with, nil, placeholder: "Entrez la lettre de début", class: "form-control" %>
+				<%= text_field_tag :starts_with, nil, placeholder: "Entrez la lettre de début", class: "form-control", pattern: "[a-zA-Z]*", title: "Seuls les lettres sont autorisées" %>
 
-				<%= label_tag :ends_with, "Lettre de fin :", class: "sr-only" %>
-				<%= text_field_tag :ends_with, nil, placeholder: "Entrez la lettre de fin", class: "form-control" %>
+				<%= label_tag :ends_with, "Lettre de fin :", class: "sr-only", pattern: "[a-z]*" %>
+				<%= text_field_tag :ends_with, nil, placeholder: "Entrez la lettre de fin", class: "form-control", pattern: "[a-zA-Z]*", title: "Seuls les lettres sont autorisées" %>
 
 				<%= submit_tag "Générer", class: "btn btn-secondary" %>
 			<% end %>
