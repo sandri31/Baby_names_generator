@@ -1,49 +1,51 @@
-<section class="baby_names-section">
-  <div class="container">
-    <% if @names.count == 0 %>
-      <div class="alert alert-secondary text-center mt-5" style="padding-top: 90px;" role="alert">
-        <h1>Il n'y a pas de prénoms dans la liste</h1>
-        <p>
-          <a href="<%= root_path %>" class="btn btn-secondary">Retour à l'accueil</a>
-        </p>
-        <img src="https://images.ctfassets.net/s5n2t79q9icq/6rdW8PbWVohxvAum5Q20sN/e41ed9f2bda29bc8e39cfecec1e5761a/icon_768x432_capenna_express.jpg?fm=webp" alt="carte magic the gathering" class="img-fluid">
-        <h2>Aucun prénom n'a été trouvé</h2>
-        <p>
-          <strong>Veuillez réessayer avec d'autres paramètres</strong>
-        </p>
-        <p>
-          <a href="<%= root_path %>" class="btn btn-secondary">Retour à l'accueil</a>
-        </p>
-      </div>
-    <% else %>
-      <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase mt-5" style="padding-top: 120px; color: white">Liste des prénoms</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light" style="margin-bottom: 80px;">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
+<body style="background-color: #1abc9c;">
+  <section class="baby_names-section">
+    <div class="container">
+      <% if @names.count == 0 %>
+        <div class="alert alert-secondary text-center mt-5" style="padding-top: 90px;" role="alert">
+          <h1>Il n'y a pas de prénoms dans la liste</h1>
+          <p>
+            <a href="<%= root_path %>" class="btn btn-secondary">Retour à l'accueil</a>
+          </p>
+          <img src="https://images.ctfassets.net/s5n2t79q9icq/6rdW8PbWVohxvAum5Q20sN/e41ed9f2bda29bc8e39cfecec1e5761a/icon_768x432_capenna_express.jpg?fm=webp" alt="carte magic the gathering" class="img-fluid">
+          <h2>Aucun prénom n'a été trouvé</h2>
+          <p>
+            <strong>Veuillez réessayer avec d'autres paramètres</strong>
+          </p>
+          <p>
+            <a href="<%= root_path %>" class="btn btn-secondary">Retour à l'accueil</a>
+          </p>
         </div>
-      <div class="accordion" id="accordionExample">
-        <% @names.each do |name| %>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-<%= name[0] %>">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= name[0] %>" aria-expanded="false" aria-controls="collapse-<%= name[0] %>">
-                <%= name[0] %> : <%= name[1].count %>
-              </button>
-            </h2>
-            <div id="collapse-<%= name[0] %>" class="accordion-collapse collapse <%= 'show' if @names.count <= 10 %>" aria-labelledby="heading-<%= name[0] %>" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <ul class="list-group mb-3">
-                  <% name[1].each do |name| %>
-                    <%= name %>
-                  <% end %>
-                </ul>
+      <% else %>
+        <!-- About Section Heading-->
+          <h2 class="page-section-heading text-center text-uppercase mt-5" style="padding-top: 120px; color: white">Liste des prénoms</h2>
+          <!-- Icon Divider-->
+          <div class="divider-custom divider-light" style="margin-bottom: 80px;">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+          </div>
+        <div class="accordion" id="accordionExample" style="margin-bottom: 220px;">
+          <% @names.each do |name| %>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-<%= name[0] %>">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= name[0] %>" aria-expanded="false" aria-controls="collapse-<%= name[0] %>">
+                  <%= name[0] %> : <%= name[1].count %>
+                </button>
+              </h2>
+              <div id="collapse-<%= name[0] %>" class="accordion-collapse collapse <%= 'show' if @names.count <= 10 %>" aria-labelledby="heading-<%= name[0] %>" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul class="list-group mb-3">
+                    <% name[1].each do |name| %>
+                      <%= name %>
+                    <% end %>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</section>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</body>
