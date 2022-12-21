@@ -5,7 +5,8 @@
 # and a set of rules for determining which names are allowed and which are
 # forbidden.
 #
-# @author JMG Harry and modified by Symitsh
+# @author JMG Harry : https://pastebin.com/NkQrnugq
+# @modified by Symitsh
 module BabyNameGenerator
   MIN_LENGTH = 4
   MAX_LENGTH = 5
