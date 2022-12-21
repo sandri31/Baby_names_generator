@@ -5,24 +5,24 @@
 			<!-- Masthead Avatar Image-->
 			<img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
 			<!-- Masthead Heading-->
-			<h1 class="masthead-heading text-uppercase mb-0">Génère un nom de bébé</h1>
+			<h1 class="masthead-heading text-uppercase mb-0">Génère un prénom</h1>
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
-					<div class="divider-custom-line"></div>
-					<div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-					<div class="divider-custom-line"></div>
+				<div class="divider-custom-line"></div>
+				<div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+				<div class="divider-custom-line"></div>
 			</div>
 			<%= form_with(url: baby_names_path, method: :get, local: true, class: "form-inline") do %>
-				<%= label_tag :starts_with, "Lettre de début :", class: "sr-only" %>
+				<%= label_tag :starts_with, "Lettre(s) de début :", class: "" %>
 				<%= text_field_tag :starts_with, nil, placeholder: "Entrez la lettre de début", class: "form-control", pattern: "[a-zA-Z]*", title: "Seuls les lettres sont autorisées" %>
 
-				<%= label_tag :ends_with, "Lettre de fin :", class: "sr-only", pattern: "[a-z]*" %>
+				<%= label_tag :ends_with, "Lettre(s) de fin :", class: " mt-2", pattern: "[a-z]*" %>
 				<%= text_field_tag :ends_with, nil, placeholder: "Entrez la lettre de fin", class: "form-control", pattern: "[a-zA-Z]*", title: "Seuls les lettres sont autorisées" %>
 
-				<%= submit_tag "Générer", class: "btn btn-secondary" %>
+					<p class="masthead-subheading font-weight-light mt-2">Trouve le prénom parfait pour ton bébé !</p>
+				<%= submit_tag "Générer", class: "btn btn-secondary btn-lg mt-2" %>
 			<% end %>
 			<!-- Masthead Subheading-->
-			<p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
 		</div>
 	</header>
 	<!-- About Section-->
@@ -38,14 +38,23 @@
 			</div>
 			<!-- About Section Content-->
 			<div class="row">
-				<div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-				<div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-			</div>
+				<div class="col-lg-5 ms-auto"><p class="lead">BabyNameGenerator est un script qui fournit des méthodes pour générer et filtré des prénoms. Il contient une liste de voyelles et de consonnes communes,
+					et un ensemble de règles pour déterminer quels prénoms sont autorisés et lesquels sont interdit.</p></div>
+				<div class="col-lg-4 me-auto"><p class="lead">Dont voici les règles :
+					<ul>
+						<li>Les prénoms doivent commencer par une consonne et finir par une voyelle.</li>
+						<li>Les prénoms ne peuvent pas contenir deux voyelles consécutives.</li>
+						<li>Les prénoms ne peuvent pas contenir deux consonnes consécutives.</li>
+						<li>Les prénoms ne peuvent pas commencer par les lettres Q, U, V, W, X, Y ou Z.</li>
+						<li>La combinaison de lettres "NA" doit être présente dans chaque prénom.</li>
+						<li>La taille des prénoms doit être comprise entre 4 et 5 caractères.</li>
+					</ul></p>
+				</div>
 			<!-- About Section Button-->
 			<div class="text-center mt-4">
-				<a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
+				<a class="btn btn-xl btn-outline-dark" href="https://pastebin.com/NkQrnugq">
 					<i class="fas fa-download me-2"></i>
-					Free Download!
+					Voir le script !
 				</a>
 			</div>
 		</div>
