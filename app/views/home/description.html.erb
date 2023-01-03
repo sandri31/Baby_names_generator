@@ -13,7 +13,7 @@
 				<div class="divider-custom-line"></div>
 			</div>
 			<%= form_with(url: baby_names_path, method: :get, local: true, class: "form-inline") do %>
-				<%= label_tag :required_chars, 'Mettez des lettres qui seront dans tous les prénoms :' %>
+				<%= label_tag :required_chars, 'Lettre(s) dans tous les prénoms :' %>
 				<%= text_field_tag :required_chars, 'na', placeholder: "Entrez une combinaison", class: "form-control", pattern: "[a-zA-Z]*", title: "Seuls les lettres sont autorisées" %>
 
 				<%= label_tag :starts_with, "Lettre(s) de début :", class: "" %>
@@ -48,7 +48,6 @@
 						<li>La combinaison de lettres "NA" doit être présente dans chaque prénom.</li>
 						<li>Les prénoms ne peuvent pas commencer par les lettres Q, U, V, W, X, Y ou Z.</li>
 						<li>La taille des prénoms doit être comprise entre 4 et 5 caractères.</li>
-						<li>(Prochainement ces paramètres pourront être modifiés)</li>
 					</ul></p>
 				</div>
 			<!-- About Section Button-->
