@@ -44,7 +44,7 @@ module BabyNameGenerator
   end
 
   def self.contains_required_chars?(name)
-    @required_global.all? { |char| name.include?(char) }
+    @required_global && @required_global.all? { |char| name.include?(char) }
   end
 
   def self.forbidden_char_present?(name)
