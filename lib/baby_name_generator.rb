@@ -17,7 +17,7 @@ module BabyNameGenerator
                         yx yn yl yk ym yp yq yr yg yd yc ys yt yb yf yj uu ouou yh uo oo sss sz'.split(' ')
   @forbidden_start = 'y w u tt nn by lc fy z q'.split(' ')
   @forbidden_end = 'j rr ux uz ph thu pp ll nn q ox k z p d b uj ug uc uh um ur uss ust utr st sl eac eaf aj'.split(' ')
-  @required_global = 'na'.split(' ')
+  @required_global = 'fo'.split(' ')
 
   def self.generate_combinations(list1, list2)
     list1.product(list2).map(&:join)
