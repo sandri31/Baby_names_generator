@@ -13,7 +13,7 @@
 				<div class="divider-custom-line"></div>
 			</div>
 			<%= form_with(url: baby_names_path, method: :get, local: true, class: "form-inline") do %>
-				<%= label_tag :required_chars, 'Combinaison de lettres dans le prénom (par default: "na") :' %>
+				<%= label_tag :required_chars, 'Mettez des lettres qui seront dans tous les prénoms :' %>
 				<%= text_field_tag :required_chars, 'na', placeholder: "Entrez une combinaison", class: "form-control", pattern: "[a-zA-Z]*", title: "Seuls les lettres sont autorisées" %>
 
 				<%= label_tag :starts_with, "Lettre(s) de début :", class: "" %>
