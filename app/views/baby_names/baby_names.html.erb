@@ -25,6 +25,11 @@
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
         </div>
+        <ul>
+          <% @prenoms.each do |prenom| %>
+            <li><%= prenom %></li>
+          <% end %>
+        </ul>
         <div class="accordion" id="accordionExample" style="margin-bottom: 220px;">
           <% @names.each do |name| %>
             <div class="accordion-item">
@@ -36,7 +41,9 @@
               <div id="collapse-<%= name[0] %>" class="accordion-collapse collapse <%= 'show' if @names.count <= 10 %>" aria-labelledby="heading-<%= name[0] %>" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <% name[1].each do |name| %>
-                    <button type="button" class="btn btn-light"><%= name %></button>
+                    <%= link_to(baby_names_path(prenom: name), class: "btn btn-light") do %>
+                      <%= name %>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
