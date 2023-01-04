@@ -35,11 +35,9 @@
               </h2>
               <div id="collapse-<%= name[0] %>" class="accordion-collapse collapse <%= 'show' if @names.count <= 10 %>" aria-labelledby="heading-<%= name[0] %>" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <ul class="list-group mb-3">
-                    <% name[1].each do |name| %>
-                      <%= name %>
-                    <% end %>
-                  </ul>
+                  <% name[1].each do |name| %>
+                    <button type="button" class="btn btn-light"><%= name %></button>
+                  <% end %>
                 </div>
               </div>
             </div>
