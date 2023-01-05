@@ -68,6 +68,7 @@ For major changes, please contact me before starting to work on it.
 
 ## Tests
 
+use gem rspec
 Test work in progress
 
 
