@@ -19,7 +19,8 @@
 
 ## Project overview
 This project is personal
-[overview](Capture d’écran 2023-01-05 à 15.15.15.png)
+
+![overview](https://github.com/Symitsh/Baby_names_generator/blob/9eeca14d3ab6dc85301da0eb859152a808217d69/Capture%20d%E2%80%99e%CC%81cran%202023-01-05%20a%CC%80%2015.15.15.png)
 
 ### Prerequisite
 
