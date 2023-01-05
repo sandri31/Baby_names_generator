@@ -7,19 +7,18 @@
 
 ## Table of contents
 
-- [README](#readme)
   - [Table of contents](#table-of-contents)
   - [Project overview](#project-overview)
-    - [Prerequisite](#prerequisite)
+  - [Prerequisite](#prerequisite)
   - [Installation](#installation)
-  - [Usage](#usage)
-  - [Licence](#licence)
-  - [Contributing](#contributing)
+    - [Usage](#usage)
+    - [Licence](#licence)
+    - [Contributing](#contributing)
   - [Tests](#tests)
   - [Special Thanks](#special-thanks)
 
 ## Project overview
-Ce projet est un projet personnel
+This project is personal
 
 ### Prerequisite
 
@@ -55,20 +54,21 @@ BabyNameGenerator is an algorithm that provides methods for generating and filte
 
 ## Licence
 
-Vous pouvez utiliser ce projet comme bon vous semble, mais n'oubliez pas mettre une "stars" sur mon projet pour me donner un petit coup de pouce. Et pourquoi pas, me faire un petit retour, ça me ferait plaisir.
+You can use this project as you see fit, but don't forget to put a "stars" on my project to give me a little boost. And why not, give me a little feedback, that would make me happy.
 
 
 
 ## Contributing
-https://github.com/Symitsh
 
-https://github.com/Lauris-Bessone
+Contributions are welcome.
+For major changes, please contact me before starting to work on it.
 
 
 
 
 ## Tests
 
+use gem rspec
 Test work in progress
 
 
