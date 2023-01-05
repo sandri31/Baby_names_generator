@@ -19,7 +19,7 @@
   - [Special Thanks](#special-thanks)
 
 ## Project overview
-Ce projet est un projet personnel
+This project is personal
 
 ### Prerequisite
 
