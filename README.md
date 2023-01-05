@@ -60,9 +60,9 @@ You can use this project as you see fit, but don't forget to put a "stars" on my
 
 
 ## Contributing
-https://github.com/Symitsh
 
-https://github.com/Lauris-Bessone
+Contributions are welcome.
+For major changes, please contact me before starting to work on it.
 
 
 
