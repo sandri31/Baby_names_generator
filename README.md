@@ -55,7 +55,7 @@ BabyNameGenerator is an algorithm that provides methods for generating and filte
 
 ## Licence
 
-Vous pouvez utiliser ce projet comme bon vous semble, mais n'oubliez pas mettre une "stars" sur mon projet pour me donner un petit coup de pouce. Et pourquoi pas, me faire un petit retour, ça me ferait plaisir.
+You can use this project as you see fit, but don't forget to put a "stars" on my project to give me a little boost. And why not, give me a little feedback, that would make me happy.
 
 
 
