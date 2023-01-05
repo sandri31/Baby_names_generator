@@ -7,7 +7,6 @@
 
 ## Table of contents
 
-- [README](#readme)
   - [Table of contents](#table-of-contents)
   - [Project overview](#project-overview)
   - [Prerequisite](#prerequisite)
