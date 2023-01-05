@@ -5,28 +5,29 @@
 
 
 
-## Table des matières
+## Table of contents
 
-  - [Table des matières](#table-des-matières)
-  - [Aperçu du projet](#aperçu-du-projet)
-  - [Prérequis](#prérequis)
+- [README](#readme)
+  - [Table of contents](#table-of-contents)
+  - [Project overview](#project-overview)
+    - [Prerequisite](#prerequisite)
   - [Installation](#installation)
-    - [Utilisation](#utilisation)
-    - [Licence](#licence)
-    - [Contribution](#contribution)
+  - [Usage](#usage)
+  - [Licence](#licence)
+  - [Contributing](#contributing)
   - [Tests](#tests)
-  - [Remerciements](#remerciements)
+  - [Special Thanks](#special-thanks)
 
-## Aperçu du projet
+## Project overview
 Ce projet est un projet personnel
 
-### Prérequis
+### Prerequisite
 
 Ruby version : 3.1.2
 
 rails version : 7.0.4
 
-Vérifier que vous avez la bonne version de Ruby et de Rails installé sur votre machine.
+Check that you have the correct version of Ruby and Rails installed on your machine.
 ```bash
 ruby -v
 rails -v
@@ -48,18 +49,17 @@ rails s
 ```
 
 
-## Utilisation
+## Usage
 
-
-
+BabyNameGenerator is an algorithm that provides methods for generating and filtering first names. It contains a list of common vowels and consonants, and a set of rules for determining which first names are allowed and which are not.
 
 ## Licence
 
+Vous pouvez utiliser ce projet comme bon vous semble, mais n'oubliez pas mettre une "stars" sur mon projet pour me donner un petit coup de pouce. Et pourquoi pas, me faire un petit retour, ça me ferait plaisir.
 
 
 
-
-## Contribution
+## Contributing
 https://github.com/Symitsh
 
 https://github.com/Lauris-Bessone
@@ -69,10 +69,10 @@ https://github.com/Lauris-Bessone
 
 ## Tests
 
+Test work in progress
 
 
 
+## Special Thanks
 
-## Remerciements
-
-Script use : https://pastebin.com/NkQrnugq 
+We thank Harry for his [Script](https://pastebin.com/NkQrnugq) and the community [Coding Accelerator](https://joincodingnow.com/) 
