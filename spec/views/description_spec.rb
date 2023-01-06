@@ -31,18 +31,33 @@ describe 'Baby name form_with' do
     click_button 'Générer'
   end
 
+  it 'Check number it required_chars' do
+    visit root_path
+    fill_in 'required_chars', with: '123'
+    click_button 'Générer'
+    expect(page).to have_current_path('/baby_names?required_chars=123&starts_with=&ends_with=&commit=Générer')
+  end
+
   it 'Check number in starts_with' do
     visit root_path
     fill_in 'starts_with', with: '12'
     click_button 'Générer'
-    expect(page).to have_current_path('/baby_names?starts_with=12&ends_with=&commit=Générer')
+    expect(page).to have_current_path('/baby_names?required_chars=na&starts_with=12&ends_with=&commit=Générer')
   end
 
   it 'Check number in ends_with' do
     visit root_path
     fill_in 'ends_with', with: '8'
     click_button 'Générer'
-    expect(page).to have_current_path('/baby_names?starts_with=&ends_with=8&commit=Générer')
+    expect(page).to have_current_path('/baby_names?required_chars=na&starts_with=&ends_with=8&commit=Générer')
+  end
+
+  it 'Check path with required_chars' do
+    visit root_path
+    fill_in 'required_chars', with: 'bar'
+    click_button 'Générer'
+    expect(page).to have_current_path('/baby_names?required_chars=bar&starts_with=&ends_with=&commit=Générer')
+    expect(page).to have_content 'A : 4'
   end
 
   it 'Check path with starts_with' do
@@ -50,7 +65,7 @@ describe 'Baby name form_with' do
     fill_in 'starts_with', with: 'A'
     fill_in 'ends_with', with: ''
     click_button 'Générer'
-    expect(page).to have_current_path('/baby_names?starts_with=A&ends_with=&commit=Générer')
+    expect(page).to have_current_path('/baby_names?required_chars=na&starts_with=A&ends_with=&commit=Générer')
     expect(page).to have_content 'A : 228'
   end
 
@@ -59,7 +74,7 @@ describe 'Baby name form_with' do
     fill_in 'starts_with', with: ''
     fill_in 'ends_with', with: 'a'
     click_button 'Générer'
-    expect(page).to have_current_path('/baby_names?starts_with=&ends_with=a&commit=Générer')
+    expect(page).to have_current_path('/baby_names?required_chars=na&starts_with=&ends_with=a&commit=Générer')
     expect(page).to have_content 'A : 73'
   end
 end

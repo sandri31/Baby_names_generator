@@ -29,17 +29,17 @@
           <% @names.each do |name| %>
             <div class="accordion-item">
               <h2 class="accordion-header" id="heading-<%= name[0] %>">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= name[0] %>" aria-expanded="false" aria-controls="collapse-<%= name[0] %>">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= name[0] %>" aria-expanded="false" aria-controls="collapse-<%= name[0] %>" data-bs-scroll="false" href="#anchor-id">
                   <%= name[0] %> : <%= name[1].count %>
                 </button>
               </h2>
               <div id="collapse-<%= name[0] %>" class="accordion-collapse collapse <%= 'show' if @names.count <= 10 %>" aria-labelledby="heading-<%= name[0] %>" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <ul class="list-group mb-3">
-                    <% name[1].each do |name| %>
+                  <% name[1].each do |name| %>
+                    <%= link_to baby_names_path(prenom: name), class: "btn btn-light disabled" do %>
                       <%= name %>
                     <% end %>
-                  </ul>
+                  <% end %>
                 </div>
               </div>
             </div>
